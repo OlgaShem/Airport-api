@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>
+           Airports
+        </title>
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="search">
+                <h1 class="search__title"> Find your airport</h1>
+                <div class="search-field">
+                    <input type="text" id="userSearch" class="search-field__input">
+                    <button class="search-field__button" onclick="onSearch()"><img src="img/search.png" alt="" class="search-field__icon"></button>
+                </div>
+                <h3 class="search__description">Enter the name of the airport or desired city</h3>
+                <p class="error">Please, write correct name</p>
+                <div class="city-block">
+                    <div class="city city_one">Paris</div>
+                    <div class="city city_two">London</div>
+                    <div class="city city_three">Amsterdam</div>
+                    <div class="city city_four">New York</div>
+                </div>
+            </div>
+            <div class="cards"></div>
+        </div>
+
+    <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Roboto;
+    height: 100vh;
+}
+.wrapper {
+    background: url("img/plane.png");
+    background-size: cover;
+    height: 100%;
+    min-height: 700px;
+    text-align: center;
+    color: rgb(78, 14, 78);
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    margin-top: 40px;
+    z-index: 2;
+}
+.card {
+    width: 200px;
+    border-radius: 5px;
+    background: rgb(241, 237, 237);
+    padding: 20px 30px;
+    color: rgb(78, 14, 78);
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 300;
+    text-align: left;
+    margin: 0 20px 20px 0;
+    &__title {
+        position: relative;
+        font-size: 18px;
+        line-height: 20px;
+        font-weight: 500;
+        color: rgb(143, 32, 50);
+        margin-bottom: 10px;
+        &::before {
+            content: "";
+            position: absolute;
+            background: url("img/gps.png");
+            background-size: contain;
+            height: 15px;
+            width: 15px;
+            left: -18px;
+        }
+    }
+    &__text-bold {
+        font-weight: 400;
+        color: rgb(113, 15, 113);
+    }
+}
+.search {
+    max-width: 500px;
+    margin: 0 auto;
+    padding-top: 90px;
+    &__title {
+        font-size: 40px;
+        line-height: 40px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    &__description {
+        font-size: 22px;
+        line-height: 22px;
+        font-weight: 300;
+        margin-top: 10px;
+    }
+}
+
+.search-field {
+    position: relative;
+    &__input {
+        width: 100%;
+        height: 40px;
+        border: none;
+        border-radius: 5px;
+        outline:none;
+        padding-left: 10px;
+        font-size: 16px;
+        line-height: 18px;
+        color: rgb(106 92 106);
+    }
+    &__button {
+        position: absolute;
+        right: 5px;
+        top: 7px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    &__icon {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.city {
+    position: absolute;
+    color: rgb(73, 62, 71);
+    opacity: 0.2;
+    z-index: 1;
+    &_one {
+        font-size: 40px;
+        bottom: 50px;
+        left: 500px;
+    }
+    &_two {
+        font-size: 40px;
+        bottom: 150px;
+        right: 300px;
+    }
+    &_three {
+        font-size: 50px;
+        bottom: 10px;
+        right: 20px;
+    }
+    &_four {
+        font-size: 60px;
+        bottom: 200px;
+        left: 70px;
+    }
+}
+.error {
+    margin-top: 10px;
+    color: red;
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        background: url("img/plane-mob.png");
+    }
+    .city {
+        &_one {
+            bottom: 200px;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 768px) and (orientation:landscape) {
+    .city-block {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .city-block {
+        display: none;
+    }
+    .wrapper {
+        background-size: cover;
+    }
+    .search {
+        padding-top: 40px;
+        &__title {
+            font-size: 30px;
+        }
+        &__description {
+            font-size: 18px;
+        }
+    }
+    .search-field {
+        &__input {
+            width: 80%;
+        }
+        &__button {
+            right: 45px;
+        }
+    }
+    .card {
+        width: 70%;
+        margin: 0 0 20px 0;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .search {
+        &__description {
+            max-width: 80%;
+            margin: 20px auto 0;
+        }
+    }
+}
