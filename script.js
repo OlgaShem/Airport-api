@@ -12,7 +12,10 @@ function onSearch() {
         .then(response => response.json())
         .then(data=> {
             JSON.stringify(data);
-        let list = data["items"];
+            if (!data.lenght){
+                document.querySelector('.error').innerHTML = "Please, write correct name"
+            }
+            let list = data["items"];
             console.log( data["items"])
             let cards = '';
 
@@ -24,6 +27,7 @@ function onSearch() {
                 </div>`
             }
             document.querySelector('.cards').innerHTML = cards;
+            document.querySelector('.error').innerHTML = "";
             }
         )
         .catch(error => console.log(error));
