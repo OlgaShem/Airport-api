@@ -157,6 +157,8 @@ body {
   }
   .wrapper {
     background-size: cover;
+    height: auto;
+    min-height: 900px;
   }
   .search {
     padding-top: 40px;
