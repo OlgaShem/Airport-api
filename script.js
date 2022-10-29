@@ -25,6 +25,7 @@ function onSearch() {
                     <p><span class="card__text-bold"> Location: </span>${item.location.lat} ${item.location.lon} </p>
                     </div>`
                     document.querySelector('.cards').innerHTML = cards;
+                    document.querySelector('.error').innerHTML = ""
                 }
             }
         })
