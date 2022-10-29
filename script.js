@@ -11,24 +11,23 @@ function onSearch() {
     fetch('https://aerodatabox.p.rapidapi.com/airports/search/term?q='+ User +'&limit=10', options)
         .then(response => response.json())
         .then(data=> {
-            JSON.stringify(data);
-            if (!data.lenght){
-                document.querySelector('.error').innerHTML = "Please, write correct name"
-            }
             let list = data["items"];
-            console.log( data["items"])
+            if (list.length === 0 ){
+                console.log(list)
+                document.querySelector('.error').innerHTML = "Please, write correct name"  
+            }
+            else {
             let cards = '';
-
-            for (let item of list) {
-                cards += `<div class="card">
-                <p class="card__title">${item.name} </p>
-                <p><span class="card__text-bold"> ICAO: </span>${item.icao} </p>
-                <p><span class="card__text-bold"> Location: </span>${item.location.lat} ${item.location.lon} </p>
-                </div>`
+                for (let item of list) {
+                    cards += `<div class="card">
+                    <p class="card__title">${item.name} </p>
+                    <p><span class="card__text-bold"> ICAO: </span>${item.icao} </p>
+                    <p><span class="card__text-bold"> Location: </span>${item.location.lat} ${item.location.lon} </p>
+                    </div>`
+                    document.querySelector('.cards').innerHTML = cards;
+                }
             }
-            document.querySelector('.cards').innerHTML = cards;
-            document.querySelector('.error').innerHTML = "";
-            }
-        )
+        })
         .catch(error => console.log(error));
 }
+
